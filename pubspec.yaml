@@ -1,5 +1,5 @@
 name: pro_max_god
-description: PRO MAX GOD - 120 Filters + True AI
+description: PRO MAX GOD - FINAL
 publish_to: 'none'
 version: 1.0.0+1
 environment:
@@ -10,6 +10,5 @@ dependencies:
   file_picker: ^8.1.0
   video_player: ^2.8.2
   path_provider: ^2.1.2
-  ffmpeg_kit_flutter_new: ^1.0.1
 flutter:
   uses-material-design: true
