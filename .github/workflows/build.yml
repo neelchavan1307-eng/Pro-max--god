@@ -14,7 +14,7 @@ jobs:
           flutter-version: '3.22.5'
           channel: 'stable'
       - name: Fix Android Folder
-        run: "mv lib/main.dart /tmp/main.dart && flutter create --platforms android  --project-name pro_max_god --org com.example /tmp/fix && cp -r /tmp/fix/android. && mv /tmp/main.dart lib/main.dart && sed -i 's/, scale: 0.8//g' lib/main.dart && sed -i 's/scale: 0.8, //g' lib/main.dart && flutter pub add file_picker video_player path_provider"
+        run: "mv lib/main.dart /tmp/main.dart && flutter create --platforms android --project-name pro_max_god --org com.example /tmp/fix && cp -r /tmp/fix/android . && mv /tmp/main.dart lib/main.dart && sed -i 's/, scale: 0.8//g' lib/main.dart && sed -i 's/scale: 0.8, //g' lib/main.dart && flutter pub add file_picker video_player path_provider"
       - name: Build APK
         run: flutter build apk --release
       - uses: actions/upload-artifact@v4
