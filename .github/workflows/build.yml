@@ -12,7 +12,10 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.5'
-      - run: flutter pub get
+      - name: Create Android Folder
+        run: |
+          flutter create. --project-name pro_max_god --org com.example
+          flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
         with:
