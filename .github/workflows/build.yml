@@ -14,7 +14,7 @@ jobs:
           channel: 'stable'
       - run: mv lib/main.dart /tmp/m.dart
       - run: flutter create --platforms android --org com.example --project-name pro_max_god /tmp/fix
-      - run: cp -r /tmp/fix/android.
+      - run: cp -r /tmp/fix/android .
       - run: mv /tmp/m.dart lib/main.dart
       - run: sed -i 's/, scale: 0.8//g' lib/main.dart
       - run: sed -i 's/scale: 0.8, //g' lib/main.dart
