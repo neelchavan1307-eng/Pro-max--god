@@ -11,12 +11,15 @@ jobs:
           java-version: '17'
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
           channel: 'stable'
-      - name: Fix Android Folder
-        run: "mv lib/main.dart /tmp/main.dart && flutter create --platforms android --project-name pro_max_god --org com.example /tmp/fix && cp -r /tmp/fix/android. && mv /tmp/main.dart lib/main.dart && sed -i 's/, scale: 0.8//g' lib/main.dart && sed -i 's/scale: 0.8, //g' lib/main.dart && flutter pub add file_picker video_player path_provider"
-      - name: Build APK
-        run: flutter build apk --release
+      - run: mv lib/main.dart /tmp/m.dart
+      - run: flutter create --platforms android --org com.example --project-name pro_max_god /tmp/fix
+      - run: cp -r /tmp/fix/android.
+      - run: mv /tmp/m.dart lib/main.dart
+      - run: sed -i 's/, scale: 0.8//g' lib/main.dart
+      - run: sed -i 's/scale: 0.8, //g' lib/main.dart
+      - run: flutter pub add file_picker video_player path_provider
+      - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
         with:
           name: Pro-Max-GOD-APK
